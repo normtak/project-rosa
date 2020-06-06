@@ -22,9 +22,3 @@ plot_acf(df_daily_total, lags=30, alpha=0.05)
 
 df_daily_total_diff = df_daily_total.diff()
 df_daily_total_diff.plot()
-
-
-
-df = pd.read_csv(r'C:\workdir\rosabella\train.csv')
-df = df.drop(columns=['store', 'item'])
-df['date'] = pd.to_datetime[]
