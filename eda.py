@@ -8,15 +8,16 @@ Created on Thu May 21 20:23:20 2020
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import statsmodels.api as sm
 from matplotlib.ticker import PercentFormatter
 import seaborn as sns
 import os
-os.chdir(r'C:\workdir\rosabella')
+os.chdir(r'C:\workdir\rosabella\project-rosa')
 
 sns.set(style='dark')
 #sns.set_palette(sns.cubehelix_palette())
 
-df = pd.read_excel(r'C:\workdir\rosabella\sales.xlsx')
+df = pd.read_excel(r'C:\workdir\rosabella\project-rosa\data\sales.xlsx')
 df.columns = ['date_time', 'item_name', 'id', 'sales_qtt']
 df = df.drop(columns='item_name')
 df['id'] = df['id'].astype('category')
@@ -93,3 +94,17 @@ ax2.axhline(y=50, color='C1')
 plt.show()
 plt.savefig(r'charts\pareto.png')
 plt.close()
+
+
+#Aggregated weekly sales decomposition
+df_weekly_total = df.resample('W').sum()
+weekly_decompose = sm.tsa.seasonal_decompose(df_weekly_total, model='additive', period=4)
+fig1 = weekly_decompose.plot()
+
+#Aggregated daily sales decomposition
+df_daily_total = df.groupby('date_time').sum()
+daily_decompose = sm.tsa.seasonal_decompose(df_daily_total, model='additive', period=28)
+fig2 = daily_decompose.plot()
+
+
+
