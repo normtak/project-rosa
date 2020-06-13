@@ -57,7 +57,7 @@ model = Sequential()
 model.add(LSTM(4, batch_input_shape=(1, X_train.shape[1], X_train.shape[2]), stateful=True))
 model.add(Dense(1))
 model.compile(loss='mean_squared_error', optimizer='adam')
-model.fit(X_train, y_train,  nb_epoch=1000, batch_size=1, verbose=1, shuffle=False)
+model.fit(X_train, y_train,  nb_epoch=10000, batch_size=1, verbose=1, shuffle=False)
 
 #Predictions
 y_pred = model.predict(X_test, batch_size=1)
