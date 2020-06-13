@@ -8,7 +8,7 @@ Created on Tue May 19 22:17:17 2020
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append(r'C:\workdir\rosabella\modules')
+sys.path.append(r'C:\workdir\rosabella\project-rosa\modules')
 import modules
 from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import CountVectorizer
