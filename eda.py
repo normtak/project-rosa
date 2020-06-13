@@ -100,11 +100,13 @@ plt.close()
 df_weekly_total = df.resample('W').sum()
 weekly_decompose = sm.tsa.seasonal_decompose(df_weekly_total, model='additive', period=4)
 fig1 = weekly_decompose.plot()
+df_weekly_total.hist(bins=20)
 
 #Aggregated daily sales decomposition
-df_daily_total = df.groupby('date_time').sum()
+df_daily_total = df.resample('D').sum()
 daily_decompose = sm.tsa.seasonal_decompose(df_daily_total, model='additive', period=28)
 fig2 = daily_decompose.plot()
+df_daily_total.hist(bins=20)
 
 
 

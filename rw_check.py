@@ -23,7 +23,7 @@ plot_acf(df_daily_total, lags=30, alpha=0.05)
 
 df_daily_total = df_daily_total.asfreq('D').fillna(0)
 mod_ARMA = ARMA(df_daily_total, order=(2,0))
-result_ARMA = mod_AR.fit()
+result_ARMA = mod_ARMA.fit()
 result_ARMA.plot_predict(start='2020-04-01', end='2020-05-15')
 
 #Check weekly sales for randow-walk and autocorrelation
