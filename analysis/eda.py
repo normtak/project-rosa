@@ -41,7 +41,7 @@ _ = plt.ylabel('Cumulative probability')
 plt.xticks(range(0, x.max()+1))
 plt.margins(0.02)
 plt.show()
-plt.savefig(r'charts\daily_sales_ecdf.png')
+plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\daily_sales_ecdf.png')
 plt.close()
 
 #ECDF - weekly sales
@@ -57,7 +57,7 @@ _ = plt.xlabel('Quantity sold (weekly)')
 _ = plt.ylabel('Cumulative probability')
 plt.margins(0.02)
 plt.show()
-plt.savefig(r'charts\weekly_sales_ecdf.png')
+plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\weekly_sales_ecdf.png')
 plt.close()
 
 #Sales by day of week
@@ -68,7 +68,7 @@ df_dow = df_dow.groupby('dow').sum()
 dows = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 df_dow = df_dow.reindex(dows)
 df_dow.plot()
-plt.savefig(r'charts\sales_by_dow.png')
+plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\sales_by_dow.png')
 plt.close()
 
 #Pareto chart
@@ -92,7 +92,7 @@ ax2.yaxis.set_major_formatter(PercentFormatter())
 ax2.axhline(y=80, color='r')
 ax2.axhline(y=50, color='C1')
 plt.show()
-plt.savefig(r'charts\pareto.png')
+plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\pareto.png')
 plt.close()
 
 
