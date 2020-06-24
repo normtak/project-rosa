@@ -11,7 +11,7 @@ from statsmodels.graphics.tsaplots import plot_pacf
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.arima_model import ARMA
 
-df = pd.read_excel(r'C:\workdir\rosabella\project-rosa\data\sales.xlsx')
+df = pd.read_excel('.\data\sales.xlsx')
 df.columns = ['date_time', 'item_name', 'id', 'sales_qtt']
 df = df.drop(columns=['item_name', 'id'])
 

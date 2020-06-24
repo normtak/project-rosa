@@ -11,13 +11,11 @@ import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from matplotlib.ticker import PercentFormatter
 import seaborn as sns
-import os
-os.chdir(r'C:\workdir\rosabella\project-rosa')
 
 sns.set(style='dark')
 #sns.set_palette(sns.cubehelix_palette())
 
-df = pd.read_excel(r'C:\workdir\rosabella\project-rosa\data\sales.xlsx')
+df = pd.read_excel('.\data\sales.xlsx')
 df.columns = ['date_time', 'item_name', 'id', 'sales_qtt']
 df = df.drop(columns='item_name')
 df['id'] = df['id'].astype('category')
@@ -41,7 +39,7 @@ _ = plt.ylabel('Cumulative probability')
 plt.xticks(range(0, x.max()+1))
 plt.margins(0.02)
 plt.show()
-plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\daily_sales_ecdf.png')
+plt.savefig(r'.\analysis\charts\daily_sales_ecdf.png')
 plt.close()
 
 #ECDF - weekly sales
@@ -57,7 +55,7 @@ _ = plt.xlabel('Quantity sold (weekly)')
 _ = plt.ylabel('Cumulative probability')
 plt.margins(0.02)
 plt.show()
-plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\weekly_sales_ecdf.png')
+plt.savefig(r'.\analysis\charts\weekly_sales_ecdf.png')
 plt.close()
 
 #Sales by day of week
@@ -68,7 +66,7 @@ df_dow = df_dow.groupby('dow').sum()
 dows = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 df_dow = df_dow.reindex(dows)
 df_dow.plot()
-plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\sales_by_dow.png')
+plt.savefig(r'.\analysis\charts\sales_by_dow.png')
 plt.close()
 
 #Pareto chart
@@ -92,7 +90,7 @@ ax2.yaxis.set_major_formatter(PercentFormatter())
 ax2.axhline(y=80, color='r')
 ax2.axhline(y=50, color='C1')
 plt.show()
-plt.savefig(r'C:\workdir\rosabella\project-rosa\analysis\charts\pareto.png')
+plt.savefig(r'.\analysis\charts\pareto.png')
 plt.close()
 
 

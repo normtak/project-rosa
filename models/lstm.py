@@ -6,7 +6,7 @@ Created on Thu Jun 11 13:42:15 2020
 """
 
 import sys
-sys.path.append(r'C:\workdir\rosabella\project-rosa\modules')
+sys.path.append(r'.\modules')
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
@@ -18,7 +18,7 @@ from keras.layers import Dense
 from keras.models import Sequential
 from keras.layers import LSTM
 
-df = pd.read_excel(r'C:\workdir\rosabella\project-rosa\data\sales.xlsx')
+df = pd.read_excel('.\data\sales.xlsx')
 df.columns = ['date_time', 'item_name', 'id', 'sales_qtt']
 df = df.drop(columns=['item_name', 'id'])
 df_daily_total = df.groupby('date_time').sum()
