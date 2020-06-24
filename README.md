@@ -1,6 +1,6 @@
 # Project Rosa
 
-### There are two main objectives of this project:
+## There are two main objectives of this project:
 1. Analysis and profiling of historical sales data (done).
 2. Forecast future sales using classic statistical methods and/or ML algorithms (in progress).
 
@@ -13,13 +13,13 @@ The structure is as follows.
 - 'models' - contains modules with ML/DL/statistical models which are being tested for forecasting performanc (this part is work-in-progress). 
 - 'modules' - contains Python modules with helper functions, which are used in other modules.
 
-### Models.
+## Models.
 
-##### Implemented: 
+#### Implemented: 
 1. LSTM - implemented using Keras package.
 LSTM performs well for one-step forecasts, but its quality decreases for the next steps into the future. This is mainly due to the fact that LSTMs tend to overfitting in forecasting problems. Thus, other models should be taken into consideration.
 
-##### In progress:
+#### In progress:
 Classic statistical methods:
 1. ARIMA/SARIMA
 2. Exponential Smoothing
