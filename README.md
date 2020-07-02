@@ -10,7 +10,7 @@ However, data was changed for privacy reasons, but initial distributions were re
 The structure is as follows.
 - 'data' - contains file with raw data.
 - 'analysis' - contains python modules for EDA and statistical analysis, as well as separate folder with produced charts and PowerBI report.
-- 'models' - contains modules with ML/DL/statistical models which are being tested for forecasting performanc (this part is work-in-progress). 
+- 'models' - contains modules with ML/DL/statistical models which are being tested for forecasting performance (this part is work-in-progress). 
 - 'modules' - contains Python modules with helper functions, which are used in other modules.
 
 ## Models.
